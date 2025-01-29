@@ -9,6 +9,7 @@ import 'package:ociuz_shopping/bloc/category_selection/catergories_selection_eve
 import 'package:ociuz_shopping/bloc/product_bloc/product_bloc.dart';
 import 'package:ociuz_shopping/bloc/product_bloc/product_event.dart';
 import 'package:ociuz_shopping/bloc/product_bloc/product_state.dart';
+import 'package:ociuz_shopping/views/cart_page/cart_page.dart';
 import 'package:ociuz_shopping/views/product%20details/product__details.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,7 +36,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Shopping Cart'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.shopping_bag))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CartPage(),
+                    ));
+              },
+              icon: Icon(Icons.shopping_bag))
+        ],
         centerTitle: true,
       ),
       body: Container(

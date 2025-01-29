@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:ociuz_shopping/bloc/Cart_get/bloc/cartget_bloc.dart';
+import 'package:ociuz_shopping/bloc/Cart_get/bloc/cartget_event.dart';
+import 'package:ociuz_shopping/bloc/cart_add/cart_add_bloc.dart';
+import 'package:ociuz_shopping/bloc/cart_delect/bloc/cartdelet_bloc.dart';
 import 'package:ociuz_shopping/bloc/categories_bloc/categories_bloC.dart';
 import 'package:ociuz_shopping/bloc/categories_bloc/categories_event.dart';
 import 'package:ociuz_shopping/bloc/category_selection/categoriesselect_bloc.dart';
@@ -37,6 +41,13 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ProductDetailsBloc(),
         ),
+        BlocProvider(
+          create: (context) => CartAddBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CartgetBloc(),
+        ),
+        BlocProvider(create: (context) => CartdeletBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
